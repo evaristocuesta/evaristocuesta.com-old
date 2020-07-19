@@ -22,22 +22,25 @@ body {
     animation: backgroud-animation 10s ease-in-out infinite;
 }
 
-.logo {
+.content {
     position: absolute;
     text-align: center;
-    font-size: 3em;
-    font-weight: 600;
-    font-family: 'Quicksand', sans-serif;
-    color: black;
-    mix-blend-mode: screen;
-    background: white;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    animation: content-animation 1.5s ease-in-out;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    background: white;
     border-radius: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    animation: logo-animation 1.5s ease-in-out;
 }
 
 .logo a {
@@ -45,14 +48,9 @@ body {
 }
 
 .social {
-    position: absolute;
-    font-size: 3em;
-    font-weight: 100;
+    font-size: 2em;
     color: white;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -60%);
-    animation: social-animation 1.5s ease-in-out;
+    margin: 5px;
 }
 
 @keyframes backgroud-animation {
@@ -67,21 +65,11 @@ body {
     }
 }
 
-@keyframes logo-animation {
+@keyframes content-animation {
     0% {
         top: 0%;
     }
     100% {
         top: 50%;
-    }
-}
-
-@keyframes social-animation {
-    0% {
-        top: 100%;
-    }
-
-    100% {
-        top: 60%;
     }
 }
