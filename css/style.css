@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
 
 * {
     margin: 0;
@@ -14,35 +14,37 @@ body {
     height: 100vh;
     font-family: "Quicksand";
     font-weight: 600;
-}
-
-#particles-js {
-    width: 100%;
-    height: 100%;
     background: linear-gradient(45deg, #e91e63, #ff9800, #23A6D5, #232323);
     background-size: 400% 400%;
     animation: backgroud-animation 10s ease-in-out infinite;
 }
 
-section {
-    background-color: transparent;
+#particles-js {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.particles-js-canvas-el {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: content-animation 1s ease-in-out;
 }
 
 .card {
+    margin: 1rem 0;
     width: 15rem;
     background-color: rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 2rem;
     border: .3rem solid rgba(255, 255, 255, 0.8);
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    animation: content-animation 1s ease;
+    z-index: 998;
 }
 
 .card .card-img {
@@ -86,13 +88,14 @@ section {
 
 .card .btn {
     padding: 0.4rem 0.6rem;
-    background-color: rgba(255, 255, 255, .5);
+    background-color: transparent;
     border-radius: 0.5rem;
+    border: .1rem solid white;
     margin: .1rem 0;
     text-transform: uppercase;
     color: white;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 400;
     transition: all .2s;
 }
 
@@ -124,10 +127,12 @@ section {
 
 .social-media i:hover {
     transform:  translateY(-2px);
+    box-shadow: .3rem .3rem 0.8rem rgba(0, 0, 0, .5);
 }
 
 .social-media i:active {
     transform:  translateY(0);
+    box-shadow: none;
 }
 
 @keyframes backgroud-animation {
@@ -144,9 +149,9 @@ section {
 
 @keyframes content-animation {
     0% {
-        top: -50%;
+        opacity: 0%;
     }
     100% {
-        top: 50%;
+        opacity: 100%;
     }
 }
