@@ -34,20 +34,38 @@ body {
 }
 
 .card {
-    margin: 1rem 0;
+    animation: content-animation 1s ease;
+    z-index: 998;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: transform 1s linear;
+}
+
+.front-card, .back-card {
+    position: absolute;
     width: 15rem;
+    height: 30rem;
     background-color: rgba(0, 0, 0, 0.2);
+    border: .3rem solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: .3rem solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
-    animation: content-animation 1s ease;
-    z-index: 998;
+    overflow: hidden;
+    backface-visibility: hidden;
 }
 
-.card .card-img {
+.front-card {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.card-img {
     width: 100%;
     height: 14rem;
     object-fit: cover;
@@ -64,29 +82,28 @@ body {
     border: .3rem solid rgba(255, 255, 255, 0.8);
 }
 
-.card h1 {
+.front-card h1 {
     font-size: 1.5rem;
     color: white;
     margin: 1rem 0;
     text-transform: uppercase;
 }
 
-.job-title {
+.front-card .job-title {
     color: white;
     font-size: 1.4rem;
     font-weight: 300;
 }
 
-.about {
+.front-card .about {
     font-size: 1.1rem;
     font-weight: 300;
     margin: 1rem 0;
-    /* font-style: italic; */
     text-align: center;
     color: white;
 }
 
-.card .btn {
+.btn {
     padding: 0.4rem 0.6rem;
     background-color: transparent;
     border-radius: 0.5rem;
@@ -99,14 +116,42 @@ body {
     transition: all .2s;
 }
 
-.card .btn:hover {
+.btn:hover {
     transform:  translateY(-2px);
     box-shadow: .3rem .3rem 0.8rem rgba(0, 0, 0, .5);
 }
 
-.card .btn:active {
+.btn:active {
     transform:  translateY(0);
     box-shadow: none;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.back-card {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.back-card h2 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+.back-card .phone {
+    margin-top: 1rem;
+    font-weight: 300;
+}
+.back-card .email {
+    margin-top: 1rem;
+    font-weight: 300;
+}
+
+.back-card .space-back {
+    margin-top: 3.6rem;
 }
 
 .social-media {

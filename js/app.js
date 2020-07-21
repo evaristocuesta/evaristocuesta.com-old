@@ -1,4 +1,13 @@
-﻿/* -----------------------------------------------
+﻿var card = document.querySelector('.card');
+var buttons = document.querySelectorAll('.card .btn');
+
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        card.classList.toggle('is-flipped');
+    });
+});
+
+/* -----------------------------------------------
 /* How to use? : Check the GitHub README
 /* ----------------------------------------------- */
 
