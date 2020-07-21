@@ -37,6 +37,8 @@ body {
     animation: content-animation 1s ease;
     z-index: 998;
     padding: 1rem 0;
+    width: 15rem;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -74,7 +76,6 @@ body {
 
 .profile-img {
     width: 10rem;
-    height: 10rem;
     object-fit: cover;
     border-radius: 50%;
     margin-top: -12rem;
