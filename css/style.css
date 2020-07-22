@@ -37,8 +37,8 @@ body {
     animation: content-animation 1s ease;
     z-index: 998;
     padding: 1rem 0;
-    width: 15rem;
-    height: 30rem;
+    width: 17rem;
+    height: 31rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -50,8 +50,8 @@ body {
 
 .front-card, .back-card {
     position: absolute;
-    width: 15rem;
-    height: 30rem;
+    width: 17rem;
+    height: 31rem;
     background-color: rgba(0, 0, 0, 0.2);
     border: .3rem solid rgba(255, 255, 255, 0.8);
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
@@ -100,6 +100,7 @@ body {
     font-size: 1.1rem;
     font-weight: 300;
     margin: 1rem 0;
+    flex: auto;
     text-align: center;
     color: white;
 }
@@ -152,7 +153,26 @@ body {
 }
 
 .back-card .space-back {
-    margin-top: 3.6rem;
+    flex: auto;
+}
+
+.back-card .phone,
+.back-card .email {
+    padding: 0.3rem;
+    border-radius: .2rem;
+    transition: all .2s;
+}
+
+.back-card .phone:hover,
+.back-card .email:hover {
+    transform:  translateY(-2px);
+    box-shadow: .3rem .6rem .9rem rgba(0, 0, 0, .5);
+}
+
+.back-card .phone:active,
+.back-card .email:active {
+    transform:  translateY(0);
+    box-shadow: none;
 }
 
 .social-media {
