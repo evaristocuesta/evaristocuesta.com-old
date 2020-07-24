@@ -19,7 +19,13 @@ body {
     animation: backgroud-animation 10s ease-in-out infinite;
 }
 
-#particles-js {
+#canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+.container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -27,10 +33,6 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-}
-
-.particles-js-canvas-el {
-    position: absolute;
 }
 
 .card {

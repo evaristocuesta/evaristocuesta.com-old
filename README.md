@@ -1,2 +1,2 @@
 # landingpage
-Landing page for evaristo.info using CSS animations and particles.js
+Landing page using pure CSS and Javascript animations
