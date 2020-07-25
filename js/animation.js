@@ -26,6 +26,13 @@ export class Animation {
         clearInterval(this.#interval);
         this.#interval = setInterval(this.#update.bind(this), 1000 / 30);
     }
+
+    resize() {
+        this.#updateCanvas(this.#canvas, this.#context);
+        if (!this.#circle1.isInsideBounds()
+            || !this.#circle2.isInsideBounds())
+            this.init();
+    }
     
     #updateCanvas(canvas, context) {
         this.#canvas.width = window.innerWidth * devicePixelRatio;

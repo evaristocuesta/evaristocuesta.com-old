@@ -13,8 +13,8 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
 let anim = new Animation(canvas, context);
-window.onresize = init;
+window.onresize = resize;
 
-function init() {
-    anim.init();
+function resize() {
+    anim.resize();
 }

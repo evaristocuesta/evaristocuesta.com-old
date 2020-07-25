@@ -13,12 +13,19 @@ export class Circle {
     }
 
     move() {
-        this.checkDirection();
+        this.#checkDirection();
         this.x += this.speedX;
         this.y += this.speedY;
     }
 
-    checkDirection() {
+    isInsideBounds() {
+        return (this.x >= this.bounds.x1 - this.radius
+            && this.x <= this.bounds.x2 + this.radius
+            && this.y >= this.bounds.y1 - this.radius
+            && this.y <= this.bounds.y2 + this.radius);
+    }
+
+    #checkDirection() {
         if (this.x < this.bounds.x1 - this.radius
             || this.x > this.bounds.x2 + this.radius)
             {
