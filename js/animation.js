@@ -16,25 +16,23 @@ export class Animation {
     }
 
     init() {
-        this.#updateCanvas(this.#canvas, this.#context);
+        this.#resizeCanvas(this.#canvas, this.#context);
         var radius = this.#calculateRadius();
         this.#circle1 = new Circle("circle1", 0, -radius, radius, 2, 2, 
             new Rectangle(0, 0, this.#canvas.width, this.#canvas.height));
         this.#circle2 = new Circle("circle2", this.#canvas.width, this.#canvas.height + radius, radius, -2, -2,
             new Rectangle(0, 0, this.#canvas.width, this.#canvas.height));
-        this.#update();
-        clearInterval(this.#interval);
-        this.#interval = setInterval(this.#update.bind(this), 1000 / 30);
+        requestAnimationFrame(this.#update.bind(this));
     }
 
     resize() {
-        this.#updateCanvas(this.#canvas, this.#context);
+        this.#resizeCanvas(this.#canvas, this.#context);
         if (!this.#circle1.isInsideBounds()
             || !this.#circle2.isInsideBounds())
             this.init();
     }
     
-    #updateCanvas(canvas, context) {
+    #resizeCanvas(canvas, context) {
         this.#canvas.width = window.innerWidth * devicePixelRatio;
         this.#canvas.height = window.innerHeight * devicePixelRatio;
     };
@@ -59,5 +57,6 @@ export class Animation {
         this.#circle2.move();
         this.#drawCircle(this.#circle1);
         this.#drawCircle(this.#circle2);
+        requestAnimationFrame(this.#update.bind(this))
     }
 }
