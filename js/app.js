@@ -1,7 +1,9 @@
-﻿import {Animation} from './animation.js';
+﻿import Animation from './animation.js';
+import FpsMeter from './fpsMeter.js';
+import FpsMeterDefault from './fpsMeterDefault.js';
 
-var card = document.querySelector('.card');
-var buttons = document.querySelectorAll('.card .btn');
+const card = document.querySelector('.card');
+const buttons = document.querySelectorAll('.card .btn');
 
 buttons.forEach(function(button) {
     button.addEventListener('click', function() {
@@ -9,10 +11,18 @@ buttons.forEach(function(button) {
     });
 });
 
-var canvas = document.getElementById('canvas');
-var context = canvas.getContext('2d');
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext('2d');
 
-let anim = new Animation(canvas, context);
+let fpsMeter;
+if (new URLSearchParams(document.location.search).get('showfps')) {
+    fpsMeter = new FpsMeterDefault();
+}
+else {
+    fpsMeter = new FpsMeter();
+}
+
+const anim = new Animation(canvas, context, fpsMeter);
 window.onresize = resize;
 
 function resize() {

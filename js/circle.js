@@ -1,6 +1,6 @@
-import {Rectangle} from './rectangle.js';
+import Rectangle from './rectangle.js';
 
-export class Circle {
+export default class Circle {
     
     constructor(name, x, y, radius, speedX, speedY, bounds) {
         this.name = name;
@@ -12,10 +12,10 @@ export class Circle {
         this.bounds = bounds;
     }
 
-    move() {
+    update(deltaTime) {
         this.#checkDirection();
-        this.x += this.speedX;
-        this.y += this.speedY;
+        this.x += (this.speedX / deltaTime);
+        this.y += (this.speedY / deltaTime);
     }
 
     isInsideBounds() {
@@ -23,6 +23,14 @@ export class Circle {
             && this.x <= this.bounds.x2 + this.radius
             && this.y >= this.bounds.y1 - this.radius
             && this.y <= this.bounds.y2 + this.radius);
+    }
+
+    draw(ctx) {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+        ctx.fill();
+        ctx.closePath();
     }
 
     #checkDirection() {
