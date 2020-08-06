@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+      xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" 
+      xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">            
+
+	<url>
+	  <loc>https://www.evaristocuesta.com/</loc>
+	  <mobile:mobile/>
+	  <image:image>
+	    <image:loc>
+	      https://www.evaristocuesta.com/images/profile-image.jpg
+	    </image:loc>
+	    <image:title>Evaristo Cuesta .NET developer</image:title>
+	    <image:caption>Evaristo Cuesta .NET developer</image:caption>
+	  </image:image>
+	  <priority>1</priority>
+	  <lastmod>2020-08-06T19:00:00+00:00</lastmod>
+	  <changefreq>weekly</changefreq>
+	</url>
+</urlset>
