@@ -147,10 +147,12 @@ body {
 
 .back-card .phone {
     margin-top: 1rem;
+    font-size: 1.1rem;
     font-weight: 300;
 }
 .back-card .email {
     margin-top: 1rem;
+    font-size: 1.1rem;
     font-weight: 300;
 }
 
