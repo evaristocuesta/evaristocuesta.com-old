@@ -28,8 +28,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: FTP Deploy
-      # uses: SamKirkland/FTP-Deploy-Action@a9644610a0efe63542b1887c9317ce8628f56521
-      - name: Deploy files to hosting 
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
           # ftp server
